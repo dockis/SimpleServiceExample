@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+    simple-service:
+        build:
+            context: .
+            dockerfile: ./SimpleService/Dockerfile
+        container_name: simple-service
+        environment:
+            ASPNETCORE_URLS: http://+:5000
+            ASPNETCORE_ENVIRONMENT: Production
+        tty: true
+        ports:
+            - "5000:5000"
